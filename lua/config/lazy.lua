@@ -65,14 +65,43 @@ require("lazy").setup({
 		    "nvim-tree/nvim-web-devicons", -- optional, but recommended
 	    },
 	    lazy = false, -- neo-tree will lazily load itself
+    },
+    {
+      "mason-org/mason.nvim",
+      opts = {}
+    },
+    {
+      "mason-org/mason-lspconfig.nvim",
+      opts = {
+        "clangd",
+        "pyright",
+        "ts_ls",
+        "rust_analyzer",
+        "lua_ls",
+        "arduino_language_server",
+        "jdtls"
+      },
+      dependencies = {
+        { "mason-org/mason.nvim", opts = {} },
+        "neovim/nvim-lspconfig",
+      },
+    },
+    {
+      "neovim/nvim-lspconfig",
     }
   },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+-- LSP settings
+vim.lsp.enable('clangd')
+vim.lsp.enable('pyright')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('arduino_language_server')
+vim.lsp.enable('jdtls')
 
 local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
