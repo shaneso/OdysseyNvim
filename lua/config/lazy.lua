@@ -64,18 +64,24 @@ require("lazy").setup({
 		    "MunifTanjim/nui.nvim",
 		    "nvim-tree/nvim-web-devicons", -- optional, but recommended
 	    },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false
+        }
+      },
 	    lazy = false, -- neo-tree will lazily load itself
     },
     {
       "mason-org/mason-lspconfig.nvim",
       opts = {
-        "clangd",
-        "pyright",
-        "ts_ls",
-        "rust_analyzer",
-        "lua_ls",
-        "arduino_language_server",
-        "jdtls"
+        "clangd",                  -- c++
+        "pyright",                 -- python
+        "ts_ls",                   -- typescript / javascript
+        "rust_analyzer",           -- rust
+        "lua_ls",                  -- lua
+        "arduino_language_server", -- arduino
+        "jdtls"                    -- java
       },
       dependencies = {
         { "mason-org/mason.nvim", opts = {} },
