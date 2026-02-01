@@ -67,10 +67,6 @@ require("lazy").setup({
 	    lazy = false, -- neo-tree will lazily load itself
     },
     {
-      "mason-org/mason.nvim",
-      opts = {}
-    },
-    {
       "mason-org/mason-lspconfig.nvim",
       opts = {
         "clangd",
