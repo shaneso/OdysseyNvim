@@ -90,6 +90,20 @@ require("lazy").setup({
     },
     {
       "neovim/nvim-lspconfig",
+      config = function()
+        require("mason").setup()
+        require("mason-lspconfig").setup({
+          ensure_installed = {
+            "clangd",
+            "pyright",
+            "ts_ls",
+            "rust_analyzer",
+            "lua_ls",
+            "arduino_language_server",
+            "jdtls"
+          },
+        })
+      end,
     }
   },
   -- automatically check for plugin updates
@@ -104,6 +118,10 @@ vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('arduino_language_server')
 vim.lsp.enable('jdtls')
+
+vim.keymap.set('n', 'H', vim.lsp.buf.hover, {})
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {}) -- TODO
+vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {}) -- TODO
 
 local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
