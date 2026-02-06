@@ -133,3 +133,5 @@ vim.keymap.set('n', '<C-e>', ':Neotree toggle<CR>')
 vim.opt.background = "dark" -- set this to dark or light
 vim.cmd.colorscheme "oxocarbon"
 
+vim.keymap.set('n', 'l', '$', { desc = 'End of line' })
+
