@@ -135,3 +135,8 @@ vim.cmd.colorscheme "oxocarbon"
 
 vim.keymap.set('n', ';', '$', { desc = 'End of line' })
 
+-- Copy and paste commands
+vim.opt.clipboard = "unnamedplus"
+vim.keymap.set('n', '<leader>y', '+y', {})
+vim.keymap.set('n', '<leader>yy', '+yy', {})
+
