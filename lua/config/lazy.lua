@@ -133,7 +133,9 @@ vim.keymap.set('n', '<C-e>', ':Neotree toggle<CR>')
 vim.opt.background = "dark" -- set this to dark or light
 vim.cmd.colorscheme "oxocarbon"
 
+-- Custom keymaps
 vim.keymap.set('n', ';', '$', { desc = 'End of line' })
+vim.keymap.set('i', '<Tab>', '<Esc>', { desc = 'Normal mode' })
 
 -- Copy and paste commands
 vim.opt.clipboard = "unnamedplus"
