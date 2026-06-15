@@ -1,8 +1,8 @@
-# OdysseyNvim
+# Dotfiles
 
 ### Installation
 
-**Backup your current Neovim config**
+**Backup your current dotfiles and nvim config**
 
 ```
 mv ~/.config/nvim ~/.config/nvim.bak
@@ -11,7 +11,7 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-**Clone OdysseyNvim into your machine**
+**Clone the config into your machine**
 
 ```
 git clone https://github.com/shaneso/OdysseyNvim ~/.config/nvim
