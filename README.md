@@ -14,7 +14,7 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 **Clone the config into your machine**
 
 ```
-git clone https://github.com/shaneso/OdysseyNvim ~/.config/nvim
+git clone https://github.com/shaneso/dotfiles.git ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 nvim
 ```
